@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var cities = require('../controllers/citiesController.js');
+var restaurants = require('../controllers/restaurantsController.js');
 var path = require('path');
 var app = express();
 
@@ -16,9 +16,10 @@ module.exports = {
             next();
         });
 
-        app.get('/api/cities/:name', cities.getCitiesByParam);
-        app.get('/api/cities/weather/:cityId', cities.getCitiesWeatherByParams);
+        app.get('/api/restaurants/:lat/:long', restaurants.getRestaurantsByLatAndLon);
+        app.get('/api/restaurants/:restaurantId', restaurants.getRestaurantDetails);
 
+        app.post('/api/restaurants/like', restaurants.createRestaurantsLikes);
         return app;
     }
 }
