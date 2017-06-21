@@ -7,7 +7,7 @@ var createUrlByLatLong = function (lat,long) {
 }
 
 var createUrlByRestaurantId = function (restaurantId) {
-    return config.url + restaurantId + config.res + config.token + '&v=20170617';
+    return config.url + restaurantId + '?' + config.res + config.token + '&v=20170617';
 }
 var restaurantsMapping = function(response) {
    var restaurantList = [];

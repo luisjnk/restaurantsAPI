@@ -23,7 +23,6 @@ var  getRestaurantsByLatAndLon =  function (req,res) {
 var  getRestaurantDetails =  function (req,res) {
 
     var url =  restaurantsService.createUrlByRestaurantId(req.params.restaurantId);
-
         requestService
             .getRequest(url)
             .then(function(data){
