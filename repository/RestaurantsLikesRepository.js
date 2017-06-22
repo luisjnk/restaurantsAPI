@@ -1,18 +1,20 @@
 var RestaurantsLikes = require('../models/restaurantsLikes');
 var mongoose = require('mongoose');
  mongoose.Promise = require('bluebird');
+var moment = require('moment');
 
 
 var create = function (likes) {
      return new Promise(function (resolve, reject) {
+        var now = moment("DD-MM-YYYY"); 
         var restLikes = new RestaurantsLikes({
                 id: likes.id,
                 venueId: likes.venueId,
                 like: likes.like,
-                dislike: likes.dislike,
                 description: likes.description,
                 title: likes.title,
                 name: likes.title,
+                date: now
         })
         restLikes
                 .save(likes)

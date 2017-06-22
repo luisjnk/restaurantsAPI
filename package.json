@@ -31,7 +31,7 @@
     "lodash": "*",
     "mathjs": "*",
     "mocha": "*",
-    "moment": "*",
+    "moment": "^2.18.1",
     "mongoose": "*",
     "morgan": "*",
     "node-boleto": "*",

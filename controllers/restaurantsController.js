@@ -58,5 +58,6 @@ var findRestaurantLikes = function (req, res) {
 module.exports = {
     getRestaurantsByLatAndLon : getRestaurantsByLatAndLon,
     getRestaurantDetails : getRestaurantDetails,
-    createRestaurantsLikes : createRestaurantsLikes
+    createRestaurantsLikes : createRestaurantsLikes,
+    findRestaurantLikes : findRestaurantLikes
 }
