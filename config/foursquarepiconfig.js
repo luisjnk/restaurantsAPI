@@ -8,5 +8,5 @@ module.exports = {
     'res' :'&oauth_token=',
     'version': '&v=20170618',
     'limit': '50',
-    'query': 'foods'
+    'categoryId': '4d4b7105d754a06374d81259'
 };

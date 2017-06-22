@@ -8,7 +8,7 @@ var Promise = require("bluebird");
 var  getRestaurantsByLatAndLon =  function (req,res) {
 
     var url =  restaurantsService.createUrlByLatLong(req.params.lat,req.params.long );
-
+    console.log(url);
         requestService
             .getRequest(url)
             .then(function(data){
@@ -23,6 +23,7 @@ var  getRestaurantsByLatAndLon =  function (req,res) {
 var  getRestaurantDetails =  function (req,res) {
 
     var url =  restaurantsService.createUrlByRestaurantId(req.params.restaurantId);
+      console.log(url);
         requestService
             .getRequest(url)
             .then(function(data){
