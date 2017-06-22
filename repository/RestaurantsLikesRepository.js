@@ -10,7 +10,9 @@ var create = function (likes) {
                 venueId: likes.venueId,
                 like: likes.like,
                 dislike: likes.dislike,
-                description: likes.description
+                description: likes.description,
+                title: likes.title,
+                name: likes.title,
         })
         restLikes
                 .save(likes)
@@ -26,7 +28,24 @@ var create = function (likes) {
     });
 }
 
+var find = function (restaurantId) {
+     return new Promise(function (resolve, reject) {
+        restLikes
+                .find({venueId : restaurantId})
+                .then(function(res) {      
+                        console.log(res);
+                        resolve(res)
+                  })
+              .catch(function(err){
+                    console.log('err', err)
+                    reject(err);
+         })  
+
+    });
+}
+
 
 module.exports = {
-    create:create
+    create:create,
+    find:find
 }

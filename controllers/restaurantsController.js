@@ -44,6 +44,16 @@ var  createRestaurantsLikes =  function (req,res) {
                 res.status(400).send(err);
        });
     }        
+var findRestaurantLikes = function (req, res) {
+    restaurantsLikesRepository
+            .find(req.params.restaurantId)
+            .then(function(data){
+             res.json({success: true, message:  data.body.response.venue })     
+           })
+           .catch (function (err) {
+                res.status(400).send(err);
+       });
+}    
 
 module.exports = {
     getRestaurantsByLatAndLon : getRestaurantsByLatAndLon,

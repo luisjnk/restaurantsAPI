@@ -20,7 +20,8 @@ var restaurantsMapping = function(response) {
             'City': venue.location.city,
             'Country': venue.location.country,
             'State': venue.location.state,
-            'Url': venue.url
+            'Url': venue.url,
+            'Contact' : venue.contact.formattedPhone
         }
         restaurantList.push(restaurant);
     })

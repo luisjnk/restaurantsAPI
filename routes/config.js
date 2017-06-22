@@ -18,7 +18,7 @@ module.exports = {
 
         app.get('/api/restaurants/:lat/:long', restaurants.getRestaurantsByLatAndLon);
         app.get('/api/restaurants/:restaurantId', restaurants.getRestaurantDetails);
-
+        app.get('/api/restaurants/like/:restaurantId', restaurants.findRestaurantLikes);
         app.post('/api/restaurants/like', restaurants.createRestaurantsLikes);
         return app;
     }
