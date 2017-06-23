@@ -6,20 +6,18 @@ var moment = require('moment');
 
 var create = function (likes) {
      return new Promise(function (resolve, reject) {
-        var now = moment("DD-MM-YYYY"); 
+        var now = moment(new Date()).format("DD/MM/YYYY")
         var restLikes = new RestaurantsLikes({
-                id: likes.id,
                 venueId: likes.venueId,
                 like: likes.like,
-                description: likes.description,
+                description: likes.message,
                 title: likes.title,
-                name: likes.title,
+                name: likes.name,
                 date: now
         })
         restLikes
-                .save(likes)
+                .save()
                 .then(function(res) {      
-                        console.log(res);
                         resolve(res)
                   })
               .catch(function(err){
@@ -32,7 +30,7 @@ var create = function (likes) {
 
 var find = function (restaurantId) {
      return new Promise(function (resolve, reject) {
-        restLikes
+        RestaurantsLikes
                 .find({venueId : restaurantId})
                 .then(function(res) {      
                         console.log(res);
